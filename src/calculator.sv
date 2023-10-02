@@ -26,13 +26,13 @@ module tt_um_calculator_chip (
     input logic [7:0] NumIn,
     input logic [1:0] OpIn,
     input logic Enter,
-    input logic Reset,
+    input logic rst_n,
 
-    input logic clock);
+    input logic clk);
 
     logic [7:0] state_in;
 
-    Register #(8) state(.D(state_in), .en(Enter), .clear(Reset), .clock(clock), .Q(NumOut));
+    Register #(8) state(.D(state_in), .en(Enter), .clear(~rst_n), .clock(clock), .Q(NumOut));
 
     always_ff @(posedge clock) begin
         unique case(OpIn)
