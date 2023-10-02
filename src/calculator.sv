@@ -27,7 +27,7 @@ module tt_um_calculator_chip (
     input logic [1:0] OpIn,
     input logic Enter,
     input logic rst_n,
-
+    input logic ena,
     input logic clk);
 
     logic [7:0] state_in;
