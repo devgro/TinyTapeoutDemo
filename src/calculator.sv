@@ -33,7 +33,7 @@ module tt_um_calculator_chip (
     output logic [7:0] uio_oe,   // IOs: Bidirectional Enable path (active high: 0=input, 1=output)
     input  logic       ena,      // will go high when the design is enabled
     input  logic       clk,      // clock
-    input  logic       rst_n     // reset_n - low to reset);
+    input  logic       rst_n);     // reset_n - low to reset);
 
     logic [7:0] state_in;
 
