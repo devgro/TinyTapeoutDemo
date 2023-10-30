@@ -60,7 +60,8 @@ module tt_um_alu_chip (
         EQUALS: alu_out = (alu_in_1 == alu_in_2) ? (4'hF) : (4'h0);
         NOT: alu_out = ~alu_in_1;    
         GT: alu_out = (alu_in_1 > alu_in_2) ? (4'hF) : (4'h0);
-        LT: alu_out = (alu_in_1 < alu_in_2) ? (4'hF) : (4'h0);      
+        LT: alu_out = (alu_in_1 < alu_in_2) ? (4'hF) : (4'h0);
+        default: alu_out = 4'd0;
       endcase
     end
 
