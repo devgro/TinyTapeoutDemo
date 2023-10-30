@@ -47,7 +47,8 @@ module tt_um_alu_chip (
     assign alu_op_in = uio_in[3:0];
     assign uio_out[7:4] = alu_out;
     assign uio_oe = 8'hF0;
-  
+    assign uio_out[3:0] = 4'd0;
+    
     BCDtoSevenSegment bcd_out(.bcd(alu_out), .segment(uo_out[6:0]));
     assign uo_out[7] = 1'b0;
     // 4 input a, 4 input b, 4 bidirectional alu_op_in, 4 bidirectional result_out, 7 output result_7seg
